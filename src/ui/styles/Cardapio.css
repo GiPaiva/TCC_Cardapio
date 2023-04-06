@@ -82,12 +82,7 @@
     display: flex;
     justify-content: flex-end;
     padding: 0 1vw 0 1vw;
-    width: max-content;
 }
-/* .lista-produto{
-    padding: 0 1vw 0 1vw;
-    width: max-content;
-} */
 .col-area{
     width: 25vw;
     display: flex;
@@ -115,16 +110,13 @@
     display: flex;
     align-items: center;
 }
-.textp-direita{
-    text-align: end;
-}
+
 
 /* Parte de Pratos Prontos e Por Quilo */
 .meio-pratos{
     display: flex;
     justify-content: center;
     align-items: center;
-    margin-top: 50px;
     margin-bottom: 30px;
 }
 .pratos{
@@ -160,6 +152,8 @@
     font-size: 1.5vw;
     border-bottom: 2px solid #FFB500;
     border-radius: 0 0 20px;
+    cursor: pointer;
+    user-select: none;
 }
 .page::first-letter{
     text-transform: uppercase;

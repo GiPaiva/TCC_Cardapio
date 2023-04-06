@@ -107,8 +107,8 @@ export default function Pratos() {
                                         ))}
                                     </div>
                                 ) : (
-                                    <tr>
-                                        <td className='col produto'>Produtos não disponiveis</td>
+                                    <tr className='col-area-direita'>
+                                        <td className='col produto-direita'>Produtos não disponiveis</td>
                                     </tr>
                                 )}
                             </tbody>
