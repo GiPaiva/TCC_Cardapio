@@ -45,6 +45,8 @@ function Cardapio() {
       fetchData();
   }, [currentPage]);
 
+
+  
   return (
     <div>
       {/* Componente Header */}
@@ -75,14 +77,15 @@ function Cardapio() {
                         {/* Uma peculidade em relação a escrita da palavra, 
                           para manter padroes e não enviar ç e acentos para a api/banco, 
                           então mudamos de forma manula */}
-                        {(currentPage === 'acais') && 
-                          (currentPage !== 'tapiocasdoces') && 
-                          (currentPage !== 'tapiocassalgadas') && 
-                          (currentPage !== 'pratosprontos') && 
-                          (currentPage !== 'porquilo') ? (
-                            <p className='categoria-titulo'>Açaís</p>
-                        ):(
+                        {(currentPage !== 'acais') &&
+                        (currentPage !== 'tapiocasdoces') &&
+                        (currentPage !== 'tapiocassalgadas') &&
+                        (currentPage !== 'pratosprontos') &&
+                        (currentPage !== 'porquilo') && (
                           <p className='categoria-titulo'>{currentPage}</p>
+                        )}
+                        {currentPage === 'acais' && (
+                          <p className='categoria-titulo'>Açaís</p>
                         )}
                         {currentPage === 'tapiocasdoces' &&(
                           <p className='categoria-titulo'>Tapiocas Doces</p>

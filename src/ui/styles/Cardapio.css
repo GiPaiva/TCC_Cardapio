@@ -226,6 +226,7 @@ button{
         display: flex;
         position: relative;
         left: 0;
+        overflow-y: hidden;
     }
     .footer{
         display: none;
