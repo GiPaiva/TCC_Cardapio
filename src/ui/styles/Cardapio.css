@@ -8,7 +8,8 @@
 .card{
     width: 50vw;
     height: 100%;
-    background-color: black;
+    background-color: white;
+    border: 2px double #FFB500;
     overflow-x: hidden;
     overflow-y: scroll;
     scroll-behavior: smooth;
@@ -94,7 +95,7 @@
 .col{
     font-size: 2vw;
     padding-left: 15px;
-    color: rgb(255, 255, 255);
+    color: black;
 }
 .col::first-letter{
     text-transform: uppercase;
@@ -137,16 +138,19 @@
     display: flex;
     flex-direction: column;
     justify-content: center;
-    color: black;
-    background-color: #d7d7d799;
+    background-color: #000000ca;
     border-radius: 0 5px 20px 0;
+}
+button{
+    background-color: transparent;
+    border: none;
 }
 .page{
     display: flex;
     align-items: center;
     justify-content: center;
     text-align: center;
-    color: black;
+    color: white;
     width: 15vw;
     height: 7vh;
     font-size: 1.5vw;
@@ -188,7 +192,6 @@
 
 @media(max-width:900px){
     .card{
-        border: 2px double #FFB500;
         margin: 10px 0 10px 0;
         width: 100%;
     }

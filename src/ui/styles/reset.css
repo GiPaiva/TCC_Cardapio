@@ -22,23 +22,18 @@ a{
 }
 
 body{
-    background-image:
-        url('../imgs/background.jpeg');
-    background-repeat: no-repeat;
-    background-size:cover;    
+    background-color: white;
 }
 
-@media (max-width:1200px) {
-    body{
-        background-image: 
-        url('../imgs/background.jpeg');
-        background-repeat: no-repeat;
-        background-size:cover;
-    }
+body{
+    background-image: url('../imgs/background.png');
+    background-repeat: no-repeat;
+    background-size: cover;
 }
+
 @media(max-width:500px){
     body{
         background-image: none;
-        background-color: rgb(0, 0, 0);
+        background-color: black;
     }
 }
