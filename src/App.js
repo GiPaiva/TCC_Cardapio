@@ -49,7 +49,6 @@ function Cardapio() {
   
   return (
     <div>
-      {/* Componente Header */}
       <Header/>
       <div className='container view'>
         {/* Botões laterias que facilitam a procura por itens do cardápio */}
@@ -60,10 +59,9 @@ function Cardapio() {
                 <button className="page" onClick={() => handleButtonClick('bebidas')}>Bebidas</button>
                 <button className="page" onClick={() => handleButtonClick('pasteis')}>Pasteis</button>
                 <button className="page" onClick={() => handleButtonClick('pizzas')}>Pizzas</button>
-                <button className="page" onClick={() => handleButtonClick('tapiocassalgadas')}>Tapiocas Salgadas</button>
-                <button className="page" onClick={() => handleButtonClick('tapiocasdoces')}>Tapiocas Doces</button>
+                <button className="page" onClick={() => handleButtonClick('tapiocas salgadas')}>Tapiocas Salgadas</button>
+                <button className="page" onClick={() => handleButtonClick('tapiocas doces')}>Tapiocas Doces</button>
                 <button className="page" onClick={() => handleButtonClick('sobremesas')}>Sobremesas</button>
-                <button className="page" onClick={() => handleButtonClick('acais')}>Açaí</button>
                 <button className="page" onClick={() => handleButtonClick('pratosprontos')}>Pratos Prontos</button>
                 <button className="page" onClick={() => handleButtonClick('porquilo')}>Por Quilo</button>
             </div>
@@ -73,24 +71,20 @@ function Cardapio() {
 
                 <div className='categoria-caixa'>
                   <div>
-                      <p className='categoria-titulo'>
                         {/* Uma peculidade em relação a escrita da palavra, 
                           para manter padroes e não enviar ç e acentos para a api/banco, 
                           então mudamos de forma manula */}
-                        {(currentPage !== 'acais') &&
-                        (currentPage !== 'tapiocasdoces') &&
-                        (currentPage !== 'tapiocassalgadas') &&
+                        {
+                        (currentPage !== 'tapiocas doces') &&
+                        (currentPage !== 'tapiocas salgadas') &&
                         (currentPage !== 'pratosprontos') &&
                         (currentPage !== 'porquilo') && (
                           <p className='categoria-titulo'>{currentPage}</p>
                         )}
-                        {currentPage === 'acais' && (
-                          <p className='categoria-titulo'>Açaís</p>
-                        )}
-                        {currentPage === 'tapiocasdoces' &&(
+                        {currentPage === 'tapiocas doces' &&(
                           <p className='categoria-titulo'>Tapiocas Doces</p>
                         )}
-                        {currentPage === 'tapiocassalgadas' &&(
+                        {currentPage === 'tapiocas salgadas' &&(
                           <p className='categoria-titulo'>Tapiocas Salgadas</p>
                         )}
                         {currentPage === 'pratosprontos' &&(
@@ -99,7 +93,6 @@ function Cardapio() {
                         {currentPage === 'porquilo' &&(
                           <p className='categoria-titulo'>Por Quilo</p>
                         )}
-                      </p>
                   </div>
 
                   <div className='body-detalhes'>
@@ -114,16 +107,18 @@ function Cardapio() {
                   <table className='lista-produto'>
                       <tbody>
                         {/*(Se) Caso o array não estiver vazio, verificando pelo tamanho deste */}
-                          {products.length > 0 ? (
+                          {products?.length > 0 ? (
                               <div>
                                   {products.map((uDados) => (
-                                      <tr>
-                                          <div className='col-area'>
+                                    <div className='tabela-produto'>
+                                      <tr className='col-area'>
+                                          <div className='col-texto'>
                                               <td className='col produto'>{uDados.nome}</td>
                                               <td className='col texto'>{uDados.descricao}</td>
                                           </div>
-                                          <td className='col produto-preco'>R$ {uDados.preco}</td>
+                                          <td className='produto-preco'>R$ {uDados.preco.toFixed(2).replace('.',',')}</td>
                                       </tr>
+                                    </div>
                                   ))}
                               </div>
                           ) : (
